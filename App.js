@@ -1,3 +1,153 @@
+import React from 'react';
+import {
+  StyleSheet,
+  Button,
+  View,
+  SafeAreaView,
+  Text,
+  Alert,
+  TextInput,
+} from 'react-native';
+import Constants from 'expo-constants';
+
+function Separator() {
+  return <View style={styles.separator} />;
+}
+
+export default function App() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={styles.title}>
+          SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN
+        </Text>
+
+
+        <View style={styles.inp}>
+        <TextInput style={styles.inputbox} 
+        placeholder="username" 
+        placeholderTextColor="#000"
+        />
+        </View>
+        
+
+        <View style={styles.inp}>
+        <TextInput style={styles.inputbox} 
+        placeholder="password"
+        placeholderTextColor="#000"
+        />
+        </View>
+       
+     
+
+        <Button
+          title="Sign in"
+          onPress={() => Alert.alert('Lets Sign in But Not Now')}
+        />
+      </View>
+      
+<Separator />
+<Text style={styles.title}>
+         JOIN JAKOO JOIN JAKOO JOIN JAKOO JOIN JAKOO JOIN JAKOO JOIN JAKOO JOIN JAKOO JOIN JAKOO JOIN JAKOO JOIN JAKOO JOIN JAKOO 
+        </Text>
+
+
+        <View style={styles.inp}>
+        <TextInput style={styles.inputbox}
+        placeholder="name"
+        placeholderTextColor="#000" 
+        />
+        </View>
+        
+
+        <View style={styles.inp}>
+        <TextInput style={styles.inputbox} 
+        placeholder="username" 
+        placeholderTextColor="#000"
+        />
+        </View>
+        
+
+        <View style={styles.inp}>
+        <TextInput style={styles.inputbox} 
+        placeholder="password"
+        placeholderTextColor="#000"
+        />
+        </View>
+        
+     
+
+
+ <View>
+        
+        <Button
+          title="Join Jakoo"
+          color="#f194ff"
+          onPress={() => Alert.alert('HEY JAKOOOOOOOO')}
+        />
+      </View>
+ 
+     
+      <View>
+        
+        <View style={styles.fixToText}>
+          <Button
+            title="Forgot username"
+            onPress={() => Alert.alert('WHYYYYY')}
+          />
+          <Button
+            title="Forget password"
+            onPress={() => Alert.alert('NOOOOO Stupid')}
+          />
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+    marginHorizontal: 16,
+  },
+  title: {
+    textAlign: 'center',
+    marginVertical: 8, 
+  },
+  fixToText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: '#737373',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  inputbox: {
+  	width: 300,
+  	backgroundColor: 'green',
+  	justifyContent: 'center',
+  	alignItems: 'center',
+  	borderRadius: 5,
+  	marginTop: 10,
+   textAlign: 'center',
+   padding: 10,
+  },
+  inp: {
+justifyContent: 'center',
+  alignItems: 'center',
+  }
+});
+
+
+
+
+
+
+
+
+
 // import React from 'react';
 // import {
 //   StyleSheet,
