@@ -1,45 +1,121 @@
-import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Button } from 'react-native';
+import React from 'react';
+import {
+  StyleSheet,
+  Button,
+  View,
+  SafeAreaView,
+  Text,
+  Alert,
+} from 'react-native';
+import Constants from 'expo-constants';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
-});
+function Separator() {
+  return <View style={styles.separator} />;
+}
 
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-        <View style={styles.title} >
-        <Button title="yftyf" />
-        </View>
-        <View style={styles.title} >
-        <Button title="yftyf" />
+export default function App() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={styles.title}>
+          The title and onPress handler are required. It is recommended to set
+          accessibilityLabel to help make your app usable by everyone.
+        </Text>
+        <Button
+          title="Sign in"
+          onPress={() => Alert.alert('Lets Sign in But Not Now')}
+        />
+      </View>
+      <Separator />
+      <View>
+        
+        <Button
+          title="Join Jakoo"
+          color="#f194ff"
+          onPress={() => Alert.alert('HEY JAKOOOOOOOO')}
+        />
+      </View>
+      <Separator />
+     
+      <View>
+        <Text style={styles.title}>
+          This layout strategy lets the title define the width of the button.
+        </Text>
+        <View style={styles.fixToText}>
+          <Button
+            title="Forgot username"
+            onPress={() => Alert.alert('WHYYYYY')}
+          />
+          <Button
+            title="Forget password"
+            onPress={() => Alert.alert('NOOOOO Stupid')}
+          />
         </View>
       </View>
-      
-    );
-  }
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#777',
+    marginTop: Constants.statusBarHeight,
+    marginHorizontal: 16,
   },
-  welcome: {
-    fontSize: 20,
+  title: {
     textAlign: 'center',
-    margin: 10,
+    marginVertical: 8, 
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  fixToText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: '#737373',
+    borderBottomWidth: StyleSheet.hairlineWidth,
   },
 });
+
+
+
+
+
+
+// import React, { Component } from 'react';
+// import { View, ScrollView, TextInput, InputAccessoryView, Button } from 'react-native';
+
+// export default class UselessTextInput extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {text: 'Placeholder Text'};
+//   }
+
+
+//   render() {
+//     const inputAccessoryViewID = "uniqueID";
+//     return (
+//       <View>
+//         <ScrollView keyboardDismissMode="interactive">
+//           <TextInput
+//             style={{
+//               padding: 10,
+//               paddingTop: 50,
+//             }}
+//             inputAccessoryViewID={inputAccessoryViewID}
+//             onChangeText={text => this.setState({text})}
+//             value={this.state.text}
+//           />
+//         </ScrollView>
+//         <InputAccessoryView nativeID={inputAccessoryViewID}>
+//           <Button
+//             onPress={() => this.setState({text: 'Placeholder Text'})}
+//             title="Reset Text"
+//           />
+//         </InputAccessoryView>
+//       </View>
+
+//     );
+//   }
+// }
+
